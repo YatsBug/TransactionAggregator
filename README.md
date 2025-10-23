@@ -1,7 +1,7 @@
 # Transaction Aggregation API
 
-A simple **FastAPI** backend that reads transaction data from a local JSON
-file, categorizes it, and provides both detailed and summarized endpoints
+A simple **FastAPI** backend that reads transaction data from local JSON
+files, categorizes it, and provides both detailed and summarized endpoints
 for analysis.
 
 
@@ -205,7 +205,7 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 }
 ```
 
-## /transactions/summary
+## transactions/summary
 
 ```json
 {
