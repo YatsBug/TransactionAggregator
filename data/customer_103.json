@@ -1,0 +1,4 @@
+[
+  { "id": 6, "customer_id": 103, "amount": 200.00, "description": "Woolworths Food", "date": "2025-10-11" },
+  { "id": 7, "customer_id": 103, "amount": 75.00, "description": "Uber trip", "date": "2025-10-15" }
+]
