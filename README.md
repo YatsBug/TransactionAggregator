@@ -21,6 +21,9 @@ for analysis.
 │   ├── 📄 __init__.py
 │   └── 📄 main.py
 ├── 📂 data/
+│   ├── 📄 customer_101.json
+│   ├── 📄 customer_102.json
+│   ├── 📄 customer_103.json
 │   └── 📄 transactions.json
 ├── 📂 tests/
 │   └── 📄 test_main.py
@@ -51,26 +54,26 @@ this **temporarily** by running:
 
 #### Windows:
 ```bash
-docker build -t TransactionAggregator .
+docker build -t transaction-aggregator:latest .
 ```
 
 #### Linux:
 
 ```bash
-sudo docker build -t TransactionAggregator .
+sudo docker build -t transaction-aggregator:latest .
 ```
 
 ### Step 2: Run the container
 
 #### Windows:
 ```bash
-docker run -p 8000:8000 TransactionAggregator
+docker run -p 8000:8000 transaction-aggregator:latest
 ```
 
 #### Linux:
 
 ```bash
-sudo docker run -p 8000:8000 TransactionAggregator
+sudo docker run -p 8000:8000 transaction-aggregator:latest
 ```
 
 ### Step 3: Verify it's running
@@ -113,12 +116,14 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
 # API Endpoints
 
-| Endpoint                   | Method | Description                              |
-| ---------------------------| ------ | -----------------------------------------|
-| `/`                        | GET    | Health Check                             |
-| `/transactions`            | GET    | Returns all transactions with categories |
-| `/transactions/summary`    | GET    | Aggregated totals by category            |
-| `/transactions/{category}` | GET    | Transactions filtered by category        |
+| Endpoint                                 | Method | Description                                                          |
+| -----------------------------------------| ------ | ---------------------------------------------------------------------|
+| `/`                                      | GET    | Health Check                                                         |
+| `/transactions`                          | GET    | Returns all transactions with categories                             |
+| `/transactions/customer/{customer_id}`   | GET    | Transactions filtered by customer_id                                 |
+| `/transactions/summary`                  | GET    | Aggregated totals by category optionally filtered by customer_id     |
+| `/transactions/category/{category_name}` | GET    | Transactions filtered by category optionally filtered by customer_id |
+
 
 # Example Output:
 
@@ -130,14 +135,6 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
     "Transport": {"total":45.0, "count": 1 },
     "Income": {"total": 3000.0, "count": 1 }
 }
-```
-
-# Running Tests:
-
-Run tests manually (after installing dependencies):
-
-```bash
-pytest
 ```
 
 # Tech Stack:

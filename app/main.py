@@ -65,7 +65,6 @@ def root():
 @app.get("/transactions")
 def get_all_transactions():
     transactions = load_transactions()
-    # annotate category for each transaction (non-mutating copy if you want)
     for t in transactions:
         t["category"] = categorize(t.get("description", ""))
     return transactions
@@ -89,7 +88,6 @@ def get_summary(customer_id: int = None):
     summary = defaultdict(lambda: {"total": 0.0, "count": 0})
     for t in transactions:
         category = categorize(t.get("description", ""))
-        # cast amount defensively
         try:
             amount = float(t.get("amount", 0.0))
         except Exception:
