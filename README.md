@@ -32,8 +32,6 @@ for analysis.
 └── 📄 requirements.txt
 ```
 
----
-
 # How to Run the App
 
 ## Option 1: Run with Docker (Recommended)
@@ -308,5 +306,3 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
 This project was developed as part of a technical assessment and personal
 learning project.
-You are free to **resuse or modify the structure** for learning, portfolio,
-or demonstration purposes.
