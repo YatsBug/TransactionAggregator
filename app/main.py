@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 import json
 from pathlib import Path
 from collections import defaultdict
@@ -44,3 +44,25 @@ def get_summary():
         summary[category]["total"] += t["amount"]
         summary[category]["count"] += 1
     return summary
+
+@app.get("/transactions/categories")
+def get_totals_by_category():
+    transactions = load_transactions()
+    summary = defaultdict(lambda: {"total": 0.0, "count": 0})
+    for t in transactions:
+        category = categorize(t["description"])
+        summary[category]["total"] += t["amount"]
+        summary[category]["count"] += 1   
+    return summary
+
+@app.get("/transactions/{category}")
+def get_transactions_by_category(category: str):
+    transactions = load_transactions()
+    filtered = []
+    for t in transactions:
+        if categorize(t["description"]).lower() == category.lower():
+            filtered.append(t)
+    if not filtered:
+        raise HTTPException(status_code=404, detail="No transactions found for this category")
+    return filtered
+    
