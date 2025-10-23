@@ -1,5 +1,5 @@
 [
-  { "id": 8, "customer_id": 103, "amount": 329.99, "description": "Boxer", "date": "2025-10-17" },
-  { "id": 9, "customer_id": 102, "amount": 180.00, "description": "Numetro Cinema", "date": "2025-10-19" },
-  { "id": 10, "customer_id": 103, "amount": 24300.27, "description": "Salary", "date": "2025-10-01" }
+  { "id": 3, "customer_id": 103, "amount": 329.99, "description": "Boxer", "date": "2025-10-17" },
+  { "id": 3, "customer_id": 102, "amount": 180.00, "description": "Numetro Cinema", "date": "2025-10-19" },
+  { "id": 4, "customer_id": 103, "amount": 24300.27, "description": "Salary", "date": "2025-10-01" }
 ]
