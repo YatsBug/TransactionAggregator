@@ -7,7 +7,7 @@ for analysis.
 
 ## Features
 
-- Load transaction data from `data/transactions.json`
+- Load transaction data from JSON files
 - Automatically categorize transactions (e.g. Groceries, Transport, Income...)
 - View all transactions
 - View category summaries
@@ -16,7 +16,7 @@ for analysis.
 # Folder Structure
 
 ```text
-📁 TRANSACTIONAGGREGATOR/
+📁 TransactionAggregator/
 ├── 📂 app/
 │   ├── 📄 __init__.py
 │   └── 📄 main.py
