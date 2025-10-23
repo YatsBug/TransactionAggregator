@@ -4,7 +4,6 @@ A simple **FastAPI** backend that reads transaction data from a local JSON
 file, categorizes it, and provides both detailed and summarized endpoints
 for analysis.
 
----
 
 ## Features
 
@@ -16,17 +15,17 @@ for analysis.
 
 # Folder Structure
 
-TRANSACTIONAGGREGATOR/
-|--app/
-||--init.py
-||--main.py
-|--data/
-||--transactions.json
-|--tests/
-||--test_main.py
-|--Dockerfile
-|--README.md
-|--requirements.txt
+📁 TRANSACTIONAGGREGATOR/
+├── 📂 app/
+│   ├── 📄 __init__.py
+│   └── 📄 main.py
+├── 📂 data/
+│   └── 📄 transactions.json
+├── 📂 tests/
+│   └── 📄 test_main.py
+├── ⚙️ Dockerfile
+├── 📘 README.md
+└── 📄 requirements.txt
 
 ---
 
@@ -36,7 +35,7 @@ TRANSACTIONAGGREGATOR/
 
 ### Note for Linux users:
 
-> On **Linux**, you may need to use `sudo` before any docker command
+> On **Linux**, you may need to use `sudo` before any docker command.
 
 ### Note for Windows users:
 
@@ -122,10 +121,12 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
 # Example Output:
 
-```.json
+## /transactions/summary
+
+```json
 {
-    "Groceries": {"total: 120.5, "count": 1 },
-    "Transport": {"total":45. 0, "count": 1 },
+    "Groceries": {"total": 120.5, "count": 1 },
+    "Transport": {"total":45.0, "count": 1 },
     "Income": {"total": 3000.0, "count": 1 }
 }
 ```
@@ -140,10 +141,10 @@ pytest
 
 # Tech Stack:
 
-> Python 3.13.9
-> FastAPI
-> Uvicorn
-> Docker
+- **Python 3.13.9**
+- **FastAPI**
+- **Uvicorn**
+- **Docker**
 
 # License
 
