@@ -15,6 +15,7 @@ for analysis.
 
 # Folder Structure
 
+```text
 📁 TRANSACTIONAGGREGATOR/
 ├── 📂 app/
 │   ├── 📄 __init__.py
@@ -26,6 +27,7 @@ for analysis.
 ├── ⚙️ Dockerfile
 ├── 📘 README.md
 └── 📄 requirements.txt
+```
 
 ---
 
@@ -86,14 +88,13 @@ Open your browser and visit:
 #### Windows:
 
 ```bash
-python3 -m venv .venv
+python -m venv .venv
 .venv/Scripts/activate
 ```
 
 #### Linux:
 
 ```bash
-# Create and activate virtual environment
 python3 -m venv .venv
 source .venv/bin/activate
 ```

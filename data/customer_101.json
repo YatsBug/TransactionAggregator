@@ -1,0 +1,4 @@
+[
+  { "id": 1, "customer_id": 101, "amount": 120.50, "description": "Pick n Pay", "date": "2025-10-10" },
+  { "id": 2, "customer_id": 101, "amount": 45.00, "description": "Uber Trip", "date": "2025-10-12" }
+]
