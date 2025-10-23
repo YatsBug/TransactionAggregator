@@ -127,13 +127,173 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
 # Example Output:
 
+## /transactions
+
+```json
+{
+  "0": {
+    "id": 1,
+    "customer_id": 101,
+    "amount": 120.5,
+    "description": "Pick n Pay",
+    "date": "2025-10-08",
+    "category": "Groceries"
+  },
+  "1": {
+    "id": 2,
+    "customer_id": 101,
+    "amount": 45.0,
+    "description": "Uber Trip",
+    "date": "2025-10-03",
+    "category": "Transport"
+  },
+  "2": {
+    "id": 3,
+    "customer_id": 101,
+    "amount": 3000.0,
+    "description": "Salary",
+    "date": "2025-10-01",
+    "category": "Income"
+  },
+  "3": {
+    "id": 4,
+    "customer_id": 101,
+    "amount": 322.23,
+    "description": "Woolworths Clothing",
+    "date": "2025-10-05",
+    "category": "Clothing"
+  }
+}
+```
+
+## transactions/customer/103
+
+```json
+{
+  "0": {
+    "id": 1,
+    "customer_id": 103,
+    "amount": 200.0,
+    "description": "Woolworths Food",
+    "date": "2025-10-11",
+    "category": "Groceries"
+  },
+  "1": {
+    "id": 2,
+    "customer_id": 103,
+    "amount": 75.0,
+    "description": "Uber trip",
+    "date": "2025-10-15",
+    "category": "Transport"
+  },
+  "2": {
+    "id": 3,
+    "customer_id": 103,
+    "amount": 329.99,
+    "description": "Boxer",
+    "date": "2025-10-17",
+    "category": "Groceries"
+  },
+  "3": {
+    "id": 4,
+    "customer_id": 103,
+    "amount": 24300.27,
+    "description": "Salary",
+    "date": "2025-10-01",
+    "category": "Income"
+  }
+}
+```
+
 ## /transactions/summary
 
 ```json
 {
-    "Groceries": {"total": 120.5, "count": 1 },
-    "Transport": {"total":45.0, "count": 1 },
-    "Income": {"total": 3000.0, "count": 1 }
+  "Groceries": {
+    "total": "770.99",
+    "count": 4
+  },
+  "Transport": {
+    "total": "165.0",
+    "count": 3
+  },
+  "Income": {
+    "total": "27300.27",
+    "count": 2
+  },
+  "Clothing": {
+    "total": "322.23",
+    "count": 1
+  },
+  "Entertainment": {
+    "total": "180.0",
+    "count": 1
+  }
+}
+```
+
+## transactions/summary?customer_id=102
+
+```json
+{
+  "Groceries": {
+    "total": 120.5,
+    "count": 1
+  },
+  "Transport": {
+    "total": 45.0,
+    "count": 1
+  },
+  "Entertainment": {
+    "total": 180.0,
+    "count": 1
+  }
+}
+```
+
+## /transactions/category/income
+
+```json
+{
+  "0": {
+    "id": 3,
+    "customer_id": 101,
+    "amount": 3000.0,
+    "description": "Salary",
+    "date": "2025-10-01",
+    "category": "Income"
+  },
+  "1": {
+    "id": 4,
+    "customer_id": 103,
+    "amount": 24300.27,
+    "description": "Salary",
+    "date": "2025-10-01",
+    "category": "Income"
+  }
+}
+```
+
+## transactions/category/groceries?customer_id=103
+
+```json
+{
+  "0": {
+    "id": 1,
+    "customer_id": 103,
+    "amount": 200.0,
+    "description": "Woolworths Food",
+    "date": "2025-10-11",
+    "category": "Groceries"
+  },
+  "1": {
+    "id": 3,
+    "customer_id": 103,
+    "amount": 329.99,
+    "description": "Boxer",
+    "date": "2025-10-17",
+    "category": "Groceries"
+  }
 }
 ```
 
