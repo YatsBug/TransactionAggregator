@@ -43,8 +43,8 @@ TRANSACTIONAGGREGATOR/
 > If when you run `.venv\Scripts\activate` you see an Error, this is because
 PowerShell blocks scripts by default for security reasons. You can safely fix
 this **temporarily** by running:
-> `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`
-> `. .venv\Scripts\Activate.ps1`
+- `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`
+- `. .venv\Scripts\Activate.ps1`
 
 ### Step 1: Build the Docker image
 
@@ -75,10 +75,10 @@ sudo docker run -p 8000:8000 TransactionAggregator
 ### Step 3: Verify it's running
 
 Open your browser and visit:
-> http://127.0.0.1:8000 {API Status}
-> http://127.0.0.1:8000/transactions {All transactions}
-> http://127.0.0.1:8000/transactions/summary {Aggregated summary}
-> http://127.0.0.1:8000/docs {Swagger UI}
+- http://127.0.0.1:8000 {API Status}
+- http://127.0.0.1:8000/transactions {All transactions}
+- http://127.0.0.1:8000/transactions/summary {Aggregated summary}
+- http://127.0.0.1:8000/docs {Swagger UI}
 
 ## Option 2: Run Locally (Without Docker)
 
@@ -122,7 +122,7 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
 # Example Output:
 
-```json
+```.json
 {
     "Groceries": {"total: 120.5, "count": 1 },
     "Transport": {"total":45. 0, "count": 1 },
